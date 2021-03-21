@@ -2,6 +2,7 @@ version: '3.1'
 services:
   mariadb:
     image: mariadb:${MARIADB_VERSION:-latest}
+    profiles: ["db"]
     restart: "no"
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -27,6 +28,7 @@ services:
       args:
         NOTEBOOK_VERSION: ${NOTEBOOK_VERSION}
     image: ${COMPOSE_PROJECT_NAME:-wca}_notebook:${PROJECT_NOTEBOOK_VERSION:-latest}-${NOTEBOOK_VERSION:-latest}
+    profiles: ["notebook"]
     restart: "no"
     environment:
       MYSQL_HOST: mariadb
@@ -37,8 +39,6 @@ services:
     volumes:
       - ${PROJECT_ROOT}:/home/jovyan/work
       - ./mysql/.my.cnf:/home/jovyan/.my.cnf
-    depends_on:
-      - mariadb
     logging:
       driver: "local"
       options:
