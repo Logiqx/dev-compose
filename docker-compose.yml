@@ -2,7 +2,7 @@ version: '3.1'
 services:
   mariadb:
     image: mariadb:${MARIADB_VERSION:-latest}
-    profiles: ["db"]
+    profiles: ["db", "all"]
     restart: "no"
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -28,7 +28,7 @@ services:
       args:
         NOTEBOOK_VERSION: ${NOTEBOOK_VERSION}
     image: ${COMPOSE_PROJECT_NAME:-wca}_notebook:${PROJECT_NOTEBOOK_VERSION:-latest}-${NOTEBOOK_VERSION:-latest}
-    profiles: ["notebook"]
+    profiles: ["notebook", "all"]
     restart: "no"
     environment:
       MYSQL_HOST: mariadb
