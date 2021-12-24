@@ -28,3 +28,6 @@ RUN pip install --no-cache-dir \
     scipy==1.6.* \
     sqlparse==0.4.* \
     xlrd==1.2.*
+
+# Install Levenshtein seperately to benefit from image layers
+RUN pip install --no-cache-dir Levenshtein==0.16.* pyphonetics==0.5.*
