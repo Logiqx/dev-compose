@@ -16,18 +16,36 @@ RUN apt-get install -y --no-install-recommends mysql-client
 # Switch back to the normal user
 USER jovyan
 
+# Microsoft Excel - covid-stats, scw-comp and wsw-results
 # Note that xlrd 1.2.* is required for .xlsx support (dropped in xlrd 2.0.0)
 RUN pip install --no-cache-dir \
-    beautifulsoup4==4.9.* \
-    google==2.0.* \
-    lxml==4.6.* \
-    matplotlib==3.3.* \
-    numpy==1.20.* \
-    PyMySQL==1.0.* \
-    python-Levenshtein==0.12.* \
-    scipy==1.6.* \
-    sqlparse==0.4.* \
     xlrd==1.2.*
 
-# Install Levenshtein seperately to benefit from image layers
-RUN pip install --no-cache-dir Levenshtein==0.16.* pyphonetics==0.5.*
+# SQL - wca-ipy and wca-ipy-private
+RUN pip install --no-cache-dir \
+    PyMySQL==1.0.* \
+    sqlparse==0.4.*
+
+# Fuzzy matching - wsw-results
+RUN pip install --no-cache-dir \
+    Levenshtein==0.16.* \
+    pyphonetics==0.5.*
+
+# HTTP / API - covid-stats and twitter
+RUN pip install --no-cache-dir \
+    google==3.0.* \
+    requests==2.26.* \
+    tweepy==4.4.*
+
+# HTML parsing and generation - many projects
+# TODO - beautifulsoup4==4.10.* lxml==4.7.*
+RUN pip install --no-cache-dir \
+    beautifulsoup4==4.10.* \
+    Jinja2==3.0.* \
+    lxml==4.7.*
+
+# Scientific - covid-stats and wsw-results
+RUN pip install --no-cache-dir \
+    matplotlib==3.5.* \
+    numpy==1.21.* \
+    scipy==1.7.*
