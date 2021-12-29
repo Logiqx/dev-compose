@@ -38,7 +38,6 @@ RUN pip install --no-cache-dir \
     tweepy==4.4.*
 
 # HTML parsing and generation - many projects
-# TODO - beautifulsoup4==4.10.* lxml==4.7.*
 RUN pip install --no-cache-dir \
     beautifulsoup4==4.10.* \
     Jinja2==3.0.* \
