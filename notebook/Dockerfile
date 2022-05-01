@@ -48,3 +48,8 @@ RUN pip install --no-cache-dir \
     matplotlib==3.5.* \
     numpy==1.21.* \
     scipy==1.7.*
+
+# GPS + fitness trackers
+RUN pip install --no-cache-dir \
+    fitdecode==0.10.* \
+    gpxpy==1.5.*
