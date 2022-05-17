@@ -52,4 +52,5 @@ RUN pip install --no-cache-dir \
 # GPS + fitness trackers
 RUN pip install --no-cache-dir \
     fitdecode==0.10.* \
-    gpxpy==1.5.*
+    gpxpy==1.5.* \
+    pyubx2==1.2.*
