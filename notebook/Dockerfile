@@ -49,7 +49,7 @@ RUN pip install --no-cache-dir \
     numpy==1.21.* \
     scipy==1.7.*
 
-# GPS + fitness trackers
+# GPS + fitness trackers - gps-wizard
 RUN pip install --no-cache-dir \
     fitdecode==0.10.* \
     gpxpy==1.5.* \
