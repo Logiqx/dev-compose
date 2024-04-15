@@ -28,7 +28,7 @@ RUN pip install --no-cache-dir \
 
 # Fuzzy matching - wsw-results
 RUN pip install --no-cache-dir \
-    Levenshtein==0.16.* \
+    Levenshtein==0.25.* \
     pyphonetics==0.5.*
 
 # HTTP / API - covid-stats and twitter
@@ -41,13 +41,13 @@ RUN pip install --no-cache-dir \
 RUN pip install --no-cache-dir \
     beautifulsoup4==4.10.* \
     Jinja2==3.0.* \
-    lxml==4.7.*
+    lxml==5.2.*
 
 # Scientific - covid-stats and wsw-results
 RUN pip install --no-cache-dir \
-    matplotlib==3.5.* \
-    numpy==1.21.* \
-    scipy==1.7.*
+    matplotlib==3.8.* \
+    numpy==1.26.* \
+    scipy==1.13.*
 
 # GPS + fitness trackers - gps-wizard
 RUN pip install --no-cache-dir \
