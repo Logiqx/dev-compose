@@ -53,3 +53,7 @@ RUN pip install --no-cache-dir \
 RUN pip install --no-cache-dir \
     fitdecode==0.10.* \
     gpxpy==1.5.*
+
+# Geofencing
+RUN pip install --no-cache-dir \
+    shapely==2.0.*
