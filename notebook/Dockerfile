@@ -51,9 +51,9 @@ RUN pip install --no-cache-dir \
 
 # GPS + fitness trackers - gps-wizard
 RUN pip install --no-cache-dir \
-    fitdecode==0.10.* \
-    gpxpy==1.5.*
+    fitdecode==0.10.*
 
-# Geofencing
+# Geofencing and distance between two points on Earth
 RUN pip install --no-cache-dir \
-    shapely==2.0.*
+    shapely==2.0.* \
+    haversine==2.8.*
